@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "es5",
+      "es2015",
+      "es2016",
+      "es2017",
+      "es6",
+      "esnext"
+    ],
+    "exclude": [
+      "typings/index.d.ts",
+      "typings/index",
+      "node_modules"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "target": "es5",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true
+  }
+}
