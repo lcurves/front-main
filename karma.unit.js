@@ -18,7 +18,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: ['Chrome'],
+    browsers: ['jsdom'],
     mime: {
       'text/x-typescript': ['ts']
     },

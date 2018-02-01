@@ -10,5 +10,6 @@ export declare class NavbarComponent extends Vue {
     };
     links: Link[];
     pathChanged(): void;
+    login(): void;
     mounted(): void;
 }

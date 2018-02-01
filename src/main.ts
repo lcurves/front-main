@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import { makeHot, reload } from './util/hot-reload';
-import { createRouter } from './router';
+import  router from './router';
+import AuthService from './services/auth-service';
 
 const navbarComponent = () => import('./components/navbar').then(({ NavbarComponent }) => NavbarComponent);
-// const navbarComponent = () => import(/* webpackChunkName: 'navbar' */'./components/navbar').then(({ NavbarComponent }) => NavbarComponent);
 import './sass/main.scss';
 
 if (process.env.ENV === 'development' && module.hot) {
@@ -17,7 +17,7 @@ if (process.env.ENV === 'development' && module.hot) {
 
 new Vue({
   el: '#app-main',
-  router: createRouter(),
+  router: router,
   components: {
     'navbar': navbarComponent
   }

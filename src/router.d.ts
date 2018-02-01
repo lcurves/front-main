@@ -1,3 +1,4 @@
 import VueRouter, { RouteConfig } from 'vue-router';
 export declare function createRoutes(prefix?: string): RouteConfig[];
-export declare const createRouter: () => VueRouter;
+declare const _default: VueRouter;
+export default _default;

@@ -16,7 +16,7 @@
     ],
     "module": "esnext",
     "moduleResolution": "node",
-    "declaration": true,
+    "declaration": false,
     "target": "es5",
     "sourceMap": true,
     "emitDecoratorMetadata": true,

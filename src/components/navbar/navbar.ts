@@ -2,6 +2,7 @@ import { Collapse, Dropdown } from 'uiv';
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import { Link } from './link';
 import { Logger } from '../../util/log';
+import AuthService from '../../services/auth-service';
 
 @Component({
   template: require('./navbar.html'),
@@ -28,6 +29,10 @@ export class NavbarComponent extends Vue {
   @Watch('$route.path')
   pathChanged() {
     this.logger.info('Changed current path to: ' + this.$route.path);
+  }
+
+  login() {
+      AuthService.login();
   }
 
   mounted() {

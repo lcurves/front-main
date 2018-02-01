@@ -45,7 +45,7 @@ describe('Navbar component', () => {
     await directiveTest.execute((vm) => { // ensure Vue has bootstrapped/run change detection
       debugger;
       assert.calledWith(loggerSpy, 'Default object property!');
-      expect(vm.$el.querySelectorAll('ul.nav li').length).to.equal(3);
+      expect(vm.$el.querySelectorAll('ul.nav li').length).to.equal(4);
     });
   });
 

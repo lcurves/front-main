@@ -4,4 +4,5 @@ export declare class HomeComponent extends Vue {
     package: string;
     repo: string;
     mode: string;
+    mounted(): void;
 }
