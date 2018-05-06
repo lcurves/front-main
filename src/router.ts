@@ -1,18 +1,15 @@
 import Vue from 'vue';
-import VueRouter, {Location, Route, RouteConfig} from 'vue-router';
+import VueRouter, {RouteConfig} from 'vue-router';
 import {makeHot, reload} from './util/hot-reload';
 import {OAuthReturnComponent} from './components/oauth-return';
 
 const homeComponent = () => import('./components/home').then(({HomeComponent}) => HomeComponent);
-const aboutComponent = () => import('./components/about').then(({AboutComponent}) => AboutComponent);
+const teacherComponent = () => import('./components/teacher').then(({TeacherComponent}) => TeacherComponent);
 const listComponent = () => import('./components/list').then(({ListComponent}) => ListComponent);
-// const homeComponent = () => import(/* webpackChunkName: 'home' */'./components/home').then(({ HomeComponent }) => HomeComponent);
-// const aboutComponent = () => import(/* webpackChunkName: 'about' */'./components/about').then(({ AboutComponent }) => AboutComponent);
-// const listComponent = () => import(/* webpackChunkName: 'list' */'./components/list').then(({ ListComponent }) => ListComponent);
 
 if (process.env.ENV === 'development' && module.hot) {
     const homeModuleId = './components/home';
-    const aboutModuleId = './components/about';
+    const teacherModuleId = './components/teacher';
     const listModuleId = './components/list';
 
     // first arguments for `module.hot.accept` and `require` methods have to be static strings
@@ -20,8 +17,8 @@ if (process.env.ENV === 'development' && module.hot) {
     makeHot(homeModuleId, homeComponent,
         module.hot.accept(homeModuleId, () => reload(homeModuleId, (<any>require('./components/home')).HomeComponent)));
 
-    makeHot(aboutModuleId, aboutComponent,
-        module.hot.accept(aboutModuleId, () => reload(aboutModuleId, (<any>require('./components/about')).AboutComponent)));
+    makeHot(teacherModuleId, teacherComponent,
+        module.hot.accept(teacherModuleId, () => reload(teacherModuleId, (<any>require('./components/teacher')).TeacherComponent)));
 
     makeHot(listModuleId, listComponent,
         module.hot.accept(listModuleId, () => reload(listModuleId, (<any>require('./components/list')).ListComponent)));
@@ -38,11 +35,11 @@ export function createRoutes(prefix: string = ''): RouteConfig[] {
             component: OAuthReturnComponent,
         },
         {
-            path: prefix + '/about',
-            component: aboutComponent,
+            path: prefix + '/teacher',
+            component: teacherComponent,
         },
         {
-            path: prefix + '/list',
+            path: prefix + '/student',
             component: listComponent,
         }
     ];

@@ -31,17 +31,19 @@ class AuthService {
         this.isAuthenticated = this.isAuthenticated.bind(this);
     }
 
-    // ...
     handleAuthentication() {
-        this.auth0.parseHash((err, authResult) => {
-            if (authResult && authResult.accessToken && authResult.idToken) {
-                this.setSession(authResult);
-                router.replace('home');
-            } else if (err) {
-                router.replace('home');
-                this.logger.error(err);
-            }
+        return new Promise((resolve, reject) => {
+            this.auth0.parseHash((err, authResult) => {
+                if (authResult && authResult.accessToken && authResult.idToken) {
+                    this.setSession(authResult);
+                    return this.getData();
+
+                } else if (err) {
+                    reject(err);
+                }
+            });
         });
+
     }
 
     getData() {
@@ -58,12 +60,13 @@ class AuthService {
 
     private setSession(authResult) {
         // Set the time that the access token will expire at
-        let expiresAt = JSON.stringify(
+        const expiresAt = JSON.stringify(
             authResult.expiresIn * 1000 + new Date().getTime()
         );
         localStorage.setItem('access_token', authResult.accessToken);
         localStorage.setItem('id_token', authResult.idToken);
         localStorage.setItem('expires_at', expiresAt);
+
         this.authNotifier.emit('authChange', {authenticated: true});
     }
 
@@ -81,7 +84,7 @@ class AuthService {
     isAuthenticated(): Boolean {
         // Check whether the current time is past the
         // access token's expiry time
-        let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+        const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
         return new Date().getTime() < expiresAt;
     }
 
@@ -91,7 +94,7 @@ class AuthService {
         redirectUri: 'http://localhost:8080/oauth-return',
         audience: 'https://lcurves.auth0.com/userinfo',
         responseType: 'token id_token',
-        scope: 'openid'
+        scope: 'openid profile email phone'
     });
 
     login() {

@@ -1,11 +1,17 @@
 import {Component, Vue} from 'vue-property-decorator';
-import AuthService, {IAuthService} from '../../services/auth-service';
+import {Action} from 'vuex-class';
+import {ACTIONS} from '../../store/user/actions';
+import {namespace} from '../../store/user';
 
-@Component({})
+@Component({
+    template: '<p></p>'
+})
 export class OAuthReturnComponent extends Vue {
-    AuthService: IAuthService = AuthService;
+    @Action(ACTIONS.userLoggedIn, {namespace}) userLoggedIn: any;
 
     mounted() {
-        this.AuthService.handleAuthentication();
+        this.userLoggedIn().then(() => {
+            this.$router.push('/home');
+        });
     }
 }

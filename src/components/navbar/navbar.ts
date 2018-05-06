@@ -1,42 +1,43 @@
-import { Collapse, Dropdown } from 'uiv';
-import { Component, Vue, Watch } from 'vue-property-decorator';
-import { Link } from './link';
-import { Logger } from '../../util/log';
+import {Collapse, Dropdown} from 'uiv';
+import {Component, Vue} from 'vue-property-decorator';
+import {Link} from './link';
+import {Logger} from '../../util/log';
 import AuthService from '../../services/auth-service';
+import {Action, Getter, State} from 'vuex-class';
+import {namespace} from '../../store/user';
+import {ACTIONS} from '../../store/user/actions';
+import {GETTERS} from '../../store/user/getters';
+import {User} from '../../store/user/types';
 
 @Component({
-  template: require('./navbar.html'),
-  components: {
-    collapse: Collapse,
-  }
+    template: require('./navbar.html'),
+    components: {
+        collapse: Collapse,
+    }
 })
 export class NavbarComponent extends Vue {
 
-  protected logger: Logger;
+    @Action(ACTIONS.enrichAuthentication, {namespace}) enrichAuthentication: any;
+    @Getter(GETTERS.fullName, {namespace}) fullName: string;
+    @State(state => state.user, {namespace}) user: User;
 
-  inverted: boolean = true; // default value
+    protected logger: Logger;
 
-  showNavbar = false;
+    inverted: boolean = true; // default value
 
-  object: { default: string } = { default: 'Default object property!' }; // objects as default values don't need to be wrapped into functions
+    showNavbar = false;
 
-  links: Link[] = [
-    new Link('Home', '/'),
-    new Link('About', '/about'),
-    new Link('List', '/list')
-  ];
+    links: Link[] = [
+        new Link('Home', '/'),
+        new Link('Teacher', '/teacher'),
+        new Link('student', '/student')
+    ];
 
-  @Watch('$route.path')
-  pathChanged() {
-    this.logger.info('Changed current path to: ' + this.$route.path);
-  }
+    login() {
+        AuthService.login();
+    }
 
-  login() {
-      AuthService.login();
-  }
-
-  mounted() {
-    if (!this.logger) this.logger = new Logger();
-    this.$nextTick(() => this.logger.info(this.object.default));
-  }
+    mounted() {
+        this.enrichAuthentication();
+    }
 }

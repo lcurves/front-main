@@ -27,7 +27,7 @@
     "coverage:run": "cross-env NODE_ENV=development karma start karma.coverage.js",
     "dev": "webpack-dev-server --hot --inline",
     "lint": "tslint src/**/*.ts",
-    "serve": "superstatic dist --port 8080 --host 0.0.0.0 --config superstatic.json",
+    "serve": "superstatic dist --port 3000 --host 0.0.0.0 --config superstatic.json",
     "test": "cross-env NODE_ENV=development karma start karma.unit.js",
     "test:debug": "cross-env NODE_ENV=development karma start karma.debug.js",
     "test:watch": "cross-env NODE_ENV=development karma start karma.unit.js --singleRun=false --auto-watch"
@@ -42,7 +42,9 @@
     "vue": "~2.5.8",
     "vue-class-component": "~6.1.0",
     "vue-property-decorator": "~6.0.0",
-    "vue-router": "~3.0.1"
+    "vue-router": "~3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-class": "^0.3.0"
   },
   "devDependencies": {
     "@types/mocha": "~2.2.44",
