@@ -33,7 +33,6 @@
     "test:watch": "cross-env NODE_ENV=development karma start karma.unit.js --singleRun=false --auto-watch"
   },
   "dependencies": {
-    "@types/auth0-js": "^8.11.2",
     "auth0-js": "^9.5.1",
     "axios": "~0.17.1",
     "event-emitter": "^0.3.5",
@@ -47,6 +46,7 @@
     "vuex-class": "^0.3.0"
   },
   "devDependencies": {
+    "@types/auth0-js": "^8.11.2",
     "@types/mocha": "~2.2.44",
     "@types/node": "~8.0.53",
     "@types/sinon": "~4.0.0",
