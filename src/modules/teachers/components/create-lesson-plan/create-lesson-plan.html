@@ -1,0 +1,16 @@
+<div class="container content">
+    <div class="row">
+        <div class="content col-md-4">
+            <main-title>Create Lesson Plan</main-title>
+
+            <form @submit="createPlan">
+
+                <label>
+                    <span>Name:</span>
+                    <input type="text" v-model="formData.name">
+                </label>
+
+            </form>
+        </div>
+    </div>
+</div>

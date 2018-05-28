@@ -2,7 +2,7 @@ import Vue, {Component} from 'vue';
 import {SinonSpy} from 'sinon';
 import merge from 'lodash.merge';
 import {ILogger} from './log';
-import {IAuthService} from '../services/auth-service';
+import {IAuthService} from '../modules/core/services/auth-service';
 
 export interface IComponents {
     [key: string]: Component;

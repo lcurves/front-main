@@ -38,7 +38,7 @@
     "axios": "~0.17.1",
     "event-emitter": "^0.3.5",
     "superstatic": "^5.0.1",
-    "uiv": "^0.14.1",
+    "uiv": "^0.22.0",
     "vue": "~2.5.8",
     "vue-class-component": "~6.1.0",
     "vue-property-decorator": "~6.0.0",

@@ -7014,11 +7014,11 @@ uid-number@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
 
-uiv@^0.14.1:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/uiv/-/uiv-0.14.5.tgz#5376ea42b0e7b47846beda10b10c912646267df2"
+uiv@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/uiv/-/uiv-0.22.0.tgz#08fad06e9ba8be80b0db95a1096f3e23e80ca287"
   dependencies:
-    vue-functional-data-merge "^2.0.2"
+    vue-functional-data-merge "^2.0.3"
 
 ultron@1.0.x:
   version "1.0.2"
@@ -7242,9 +7242,9 @@ vue-class-component@^6.0.0, vue-class-component@~6.1.0:
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-6.1.2.tgz#87ac0265b0db71a3f49f10d90e4f69f9be9c2fbd"
 
-vue-functional-data-merge@^2.0.2:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/vue-functional-data-merge/-/vue-functional-data-merge-2.0.4.tgz#b045ca57097f31446db6de15c87642b6e88ca7c2"
+vue-functional-data-merge@^2.0.3:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/vue-functional-data-merge/-/vue-functional-data-merge-2.0.6.tgz#f08055adfb92458debcf2ad10c3aa712277f7fc2"
 
 vue-hot-reload-api@^2.2.4:
   version "2.2.4"
