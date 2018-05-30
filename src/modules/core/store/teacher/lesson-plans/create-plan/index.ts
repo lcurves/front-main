@@ -2,22 +2,22 @@ import {Module} from 'vuex';
 import {getters} from './getters';
 import {actions} from './actions';
 import {mutations} from './mutations';
-import {LessonPlansState} from './types';
-import {RootState} from '../../types';
-import {modules} from './modules';
+import {CreatePlanState} from './types';
+import {RootState} from '../../../types';
 
 const namespaced: boolean = true;
 
 
-export const state: LessonPlansState = {};
+export const state: CreatePlanState = {
+    plan: null
+};
 
-export const module: Module<LessonPlansState, RootState> = {
+export const module: Module<CreatePlanState, RootState> = {
     namespaced,
     state,
     getters,
     actions,
     mutations,
-    modules
 };
 
 export * from './namespace';

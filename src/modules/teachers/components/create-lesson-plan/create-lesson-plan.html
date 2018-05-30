@@ -3,11 +3,11 @@
         <div class="content col-md-4">
             <main-title>Create Lesson Plan</main-title>
 
-            <form @submit="createPlan">
+            <form @submit="createPlan" v-if="plan">
 
                 <label>
                     <span>Name:</span>
-                    <input type="text" v-model="formData.name">
+                    <input type="text" v-model="plan.name">
                 </label>
 
             </form>
