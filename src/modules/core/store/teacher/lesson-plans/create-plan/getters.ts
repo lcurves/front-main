@@ -1,12 +1,14 @@
 import {GetterTree} from 'vuex';
-import {RootState} from '../../../types';
-import {CreatePlanState} from './types';
+import {IRootState} from '../../../types';
+import {ICreatePlanState} from './types';
 
 
 export enum GETTERS {
+    plan = 'plan'
 }
 
 
-export const getters: GetterTree<CreatePlanState, RootState> = {
+export const getters: GetterTree<ICreatePlanState, IRootState> = {
+    [GETTERS.plan]: (state: ICreatePlanState) => (state.plan ? {...state.plan} : null)
 };
 

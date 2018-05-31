@@ -1,6 +1,6 @@
 import {ILessonPlan} from '../types';
 
 
-export interface CreatePlanState {
+export interface ICreatePlanState {
     plan: ILessonPlan;
 }

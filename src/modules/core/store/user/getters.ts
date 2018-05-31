@@ -1,6 +1,6 @@
 import {GetterTree} from 'vuex';
 import {UserState} from './types';
-import {RootState} from '../types';
+import {IRootState} from '../types';
 
 
 export enum GETTERS {
@@ -9,7 +9,7 @@ export enum GETTERS {
 }
 
 
-export const getters: GetterTree<UserState, RootState> = {
+export const getters: GetterTree<UserState, IRootState> = {
     [GETTERS.fullName]({user}): string {
         const firstName = (user && user.firstName) || '';
         const lastName = (user && user.lastName) || '';

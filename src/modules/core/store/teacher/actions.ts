@@ -1,11 +1,11 @@
 import {ActionTree} from 'vuex';
-import {TeacherState} from './types';
-import {RootState} from '../types';
+import {ITeacherState} from './types';
+import {IRootState} from '../types';
 
 export enum ACTIONS {
 
 }
 
-export const actions: ActionTree<TeacherState, RootState> = {
+export const actions: ActionTree<ITeacherState, IRootState> = {
 
 };

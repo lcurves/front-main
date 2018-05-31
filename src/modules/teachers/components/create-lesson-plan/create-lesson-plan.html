@@ -7,8 +7,13 @@
 
                 <label>
                     <span>Name:</span>
-                    <input type="text" v-model="plan.name">
+                    <input type="text" v-model="plan.name" v-on:blur="changeName()">
                 </label>
+
+                <h3>Slides:</h3>
+
+                <!-- should have a slide-editor-component with wysiwyg -->
+
 
             </form>
         </div>

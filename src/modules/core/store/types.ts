@@ -1,3 +1,3 @@
-export interface RootState {
+export interface IRootState {
     creator: string;
 }

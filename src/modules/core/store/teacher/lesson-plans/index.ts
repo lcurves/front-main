@@ -3,7 +3,7 @@ import {getters} from './getters';
 import {actions} from './actions';
 import {mutations} from './mutations';
 import {LessonPlansState} from './types';
-import {RootState} from '../../types';
+import {IRootState} from '../../types';
 import {modules} from './modules';
 
 const namespaced: boolean = true;
@@ -11,7 +11,7 @@ const namespaced: boolean = true;
 
 export const state: LessonPlansState = {};
 
-export const module: Module<LessonPlansState, RootState> = {
+export const module: Module<LessonPlansState, IRootState> = {
     namespaced,
     state,
     getters,

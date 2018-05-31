@@ -3,7 +3,7 @@ import { getters } from './getters';
 import { actions } from './actions';
 import { mutations } from './mutations';
 import { UserState } from './types';
-import { RootState } from '../types';
+import { IRootState } from '../types';
 
 
 const namespaced: boolean = true;
@@ -15,7 +15,7 @@ export const state: UserState = {
     isAuthenticating: false
 };
 
-export const module: Module<UserState, RootState> = {
+export const module: Module<UserState, IRootState> = {
     namespaced,
     state,
     getters,

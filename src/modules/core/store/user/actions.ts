@@ -1,6 +1,6 @@
 import {ActionTree} from 'vuex';
 import {UserState} from './types';
-import {RootState} from '../types';
+import {IRootState} from '../types';
 import authService from '../../services/auth-service';
 import {MUTATIONS} from './mutations';
 
@@ -10,7 +10,7 @@ export enum ACTIONS {
     userLoggedOut = 'userLoggedOut'
 }
 
-export const actions: ActionTree<UserState, RootState> = {
+export const actions: ActionTree<UserState, IRootState> = {
     [ACTIONS.userLoggedIn]({commit}): Promise<any> {
 
         commit(MUTATIONS.authenticate);

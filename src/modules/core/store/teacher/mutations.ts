@@ -1,10 +1,10 @@
 import {MutationTree} from 'vuex';
-import {TeacherState} from './types';
+import {ITeacherState} from './types';
 
 export enum MUTATIONS {
 
 }
 
-export const mutations: MutationTree<TeacherState> = {
+export const mutations: MutationTree<ITeacherState> = {
 
 };

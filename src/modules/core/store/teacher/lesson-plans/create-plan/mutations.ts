@@ -1,14 +1,17 @@
 import {MutationTree} from 'vuex';
-import {CreatePlanState} from './types';
+import {ICreatePlanState} from './types';
 import {LessonPlan} from '../types';
 
 export enum MUTATIONS {
-    createNewPlan = 'createNewPlan'
-
+    initiateNewPlan = 'initiateNewPlan',
+    nameChanged = 'nameChanged'
 }
 
-export const mutations: MutationTree<CreatePlanState> = {
-    [MUTATIONS.createNewPlan]: (state: CreatePlanState) => {
+export const mutations: MutationTree<ICreatePlanState> = {
+    [MUTATIONS.initiateNewPlan]: (state: ICreatePlanState) => {
         state.plan = new LessonPlan();
+    },
+    [MUTATIONS.nameChanged]: (state: ICreatePlanState, name) => {
+        state.plan.name = name;
     }
 };

@@ -1,12 +1,12 @@
 import {GetterTree} from 'vuex';
-import {RootState} from '../types';
-import {TeacherState} from './types';
+import {IRootState} from '../types';
+import {ITeacherState} from './types';
 
 
 export enum GETTERS {
 }
 
 
-export const getters: GetterTree<TeacherState, RootState> = {
+export const getters: GetterTree<ITeacherState, IRootState> = {
 };
 
